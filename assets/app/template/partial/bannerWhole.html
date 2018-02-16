@@ -1,0 +1,22 @@
+<section class="banner">
+    <div class="banner-background banner-background-slick">
+        <div class="banner-background-overlay" style="background-image:url('assets/images/banner.jpg')"></div>
+    </div>
+    <div class="banner-overlay"></div>
+    <div class="bannerText">
+        <label for="">Destination:</label>
+        <select name="" id="" class="form-control" data-ng-model="vm.destination">
+            <option value="1">Hilongos</option>
+            <option value="2">Bohol</option>
+        </select>
+        <label for="">Departure Date</label>
+        <div class="input-group">
+            <input class="form-control" datetimepicker ng-model="vm.departureDate" options="vm.options"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+        <button class="btn btn-primary" data-ng-click="vm.search()">Search</button>
+    </div>
+    
+</section>
