@@ -10,8 +10,6 @@ angular.module('BookingApplication')
         defaultDate: new Date()
     };
     vm.search = function() {
-        // $sessionStorage.departureDate = vm.departureDate;
-        // $sessionStorage.destination = vm.destination;
-        // $state.go('booking');
+        $state.go('booking');
     };
 }]);
