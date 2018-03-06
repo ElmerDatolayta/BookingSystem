@@ -1,22 +1,56 @@
 <section class="banner">
-    <div class="banner-background banner-background-slick">
-        <div class="banner-background-overlay" style="background-image:url('assets/images/banner.jpg')"></div>
-    </div>
-    <div class="banner-overlay"></div>
-    <div class="bannerText">
-        <label for="">Destination:</label>
-        <select name="" id="" class="form-control" data-ng-model="vm.destination">
-            <option value="1">Hilongos</option>
-            <option value="2">Bohol</option>
-        </select>
-        <label for="">Departure Date</label>
-        <div class="input-group">
-            <input class="form-control" datetimepicker ng-model="vm.departureDate" options="vm.options"/>
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+    <div class="banner-background banner-background-slick" style="background:url('assets/images/banner.jpg')center center; background-size: cover">
+        <!-- <div class="banner-background-overlay" style="background-image:url('assets/images/banner.jpg')"></div> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 flex flex-center">
+                    <h1 class="text-center color-white">Sample</h1>
+                </div>
+                <div class="col-md-4 flex flex-end">
+                    <div class="bannerText">
+                        <div class="book-title">
+                            <img src="assets/images/book-icon.png" class="booking-icon text-uppercase" alt="Booking-Icon"/><span class="book-label">Book Online</span>
+                        </div>
+                    
+                        <div class="booking-content">
+                            <select class="custom-dropdown margin-bottom-10">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            <select class="custom-dropdown">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            <div class="tabs btn-group">
+                                <button type="button" class="btn text-uppercase btn-default active"><a href="#oneWay">One Way</a></button>
+                                <button type="button" class="btn text-uppercase btn-default"><a href="#roundTrip">Round Trip</a></button>
+                            </div>
+                            <div id="oneWay">
+                                
+                            </div>   
+                            <div id="roundTrip">
+                                <div class="date">
+                                    <input type="date" class="date-box">
+                                    <input type="date" class="date-box">
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-check text-uppercase btn-default margin-top-10 hvr-icon-pulse-grow"><a href="#">Check Availability</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        <button class="btn btn-primary" data-ng-click="vm.search()">Search</button>
+
     </div>
+    <!-- <div class="banner-overlay"></div> -->
+    
     
 </section>

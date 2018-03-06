@@ -1,6 +1,7 @@
 body{
     background-color: #ffffff;
 }
+$text-lg : 18px;
 #main{
     a{
         &:focus, &:active, &:visited{
@@ -143,27 +144,96 @@ body{
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        // justify-content: center;
+        .flex{
+            display: flex;
+            &.flex-end{
+                justify-content: flex-end;
+            }
+            &.flex-center{
+                justify-content: center;
+            }
+            align-items: center;
+            height: 100vh;
+        }
         .bannerText{
             z-index: 2;
             position: absolute;
-            width: 350px;
-            padding: 25px;
-            background-color: white;
-            h1{
-                // position: absolute;
-                color:white;
-                z-index: 2;
-                font-weight: bold;
-                font-size:4vw;
-                text-align:center;
+            // right: 0;
+            
+            width: 100%;
+            padding: 30px 30px;
+            background-color: rgba(0,0,0,.5);
+            min-height: 500px;
+            .book-title{
+                background-color: white;
+                width: 100%;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                padding-left: 5%;
+                font-size: 25px;
+                margin-bottom: 10px;
+                .booking-icon{
+                    width: 50px;
+                }
             }
-            h2{
-                color:yellow;
-                z-index: 2;
-                font-weight: bold;
-                font-size: 3.5vw;
-                text-align: center;
+            .booking-content{
+                width: 100%;
+                height: 70px;
+                
+                .custom-dropdown{
+                    width: 100%;
+                    padding: 20px;
+                    background-color: rgba(255,255,255,.3);
+                }    
+
+                .tabs{
+                    width: 100%;
+                    margin-top: 5%;
+                    .btn{
+                        border-radius: 0;
+                        width: 50%;
+                        padding: 15px;
+                    }
+                } 
+                .date{
+                    display: flex;
+                    align-items: center;
+                    
+                    padding: 15px 15px;
+                    background-color: rgba(131,126,137,.6);
+                    .date-box{
+                        padding: 15px;
+                    }
+                }
+
+                .btn-check{
+                    background-color: red;
+                    border-radius: 0;
+                    width: 100%;
+                    padding: 20px 40px;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 18px;
+                    }
+                    .fa{
+                        color: white;
+                        font-size: 30px;
+                    }
+
+                    &:before{
+                        content: "\f0da";
+                        font-family: FontAwesome;
+                        font-size: 40px;
+                        color: white;
+                    }
+                }
             }
         }
         
@@ -367,14 +437,141 @@ body{
 		transition: visibility 0s, opacity 0.5s linear;
     }
     
+    .location{
+        width: 100%;
+        height: 100vh;
+        .map{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+        }
+        .flex-map{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            .get-in-touch{
+                width: 400px;
+                height: 500px;
+                background-color: rgba(0,0,0,.5);
+                padding: 4%; 
+                .textbox{
+                    padding: 20px;
+                }
+                .flex{
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
+                    .fa-facebook-square{
+                        font-size: 35px;
+                        color: white;
+                    }
+                    .fa-youtube-play{
+                        font-size: 45px;
+                        color: white;
+                    }
+                    .btn-submit{
+                        width: 100%;
+                        padding: 10px;
+                        background-color: #ff0000;
+                        color: white;
+                        border-radius: 0;
+                    }
+                }
+                
+                
+            }
+            .contact-us{
+                width: 350px;
+                height: 500px;
+                background-color: #ff0000;
+                padding: 4%;
+                margin-top: 0;
+                .address-icon{
+                    background: url("/assets/images/contactIcons/address.png");
+                    background-size: cover;
+                    height: 50px;
+                    width: 50px;
+                }
+
+                .text{
+                    color: white;
+                    font-size: 20px;
+                }
+
+                .email-icon{
+                    background: url("/assets/images/contactIcons/mail.png");
+                    background-size: cover;
+                    height: 50px;
+                    width: 50px;
+                    color: white;
+                }
+                .tel-icon{
+                    background: url("/assets/images/contactIcons/tel.png");
+                    background-size: cover;
+                    height: 50px;
+                    width: 50px;
+                    color: white;
+                }
+                .phone-icon{
+                    background: url("/assets/images/contactIcons/phone.png");
+                    background-size: cover;
+                    height: 50px;
+                    width: 50px;
+                    color: white;
+                }
+            }
+        }
+        
+    }
+
+    .offers-section{
+        background: url("/assets/images/offers.jpg");
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        .caption{
+            line-height: 2;
+            color: white;
+        }
+
+        .pic1{
+            background: url("/assets/images/offer_pic1.jpg");
+            background-size: cover;
+            height: 300px;
+            width: 500px;
+        }
+        .pic2{
+            background: url("/assets/images/offer_pic2.jpg");
+            background-size: cover;
+            height: 300px;
+            width: 400px;
+        }
+    }
+
+
     #aboutUsSection{
         position: relative;
-        height: auto;
-        padding-bottom: 50px;
-        width: 90%;
+        height: 100vh;
+        width: 100%;
         // border-bottom: 1px solid grey;
-        margin: 0 5vw;
-        .aboutUs{ 
+        display: flex;
+        align-items: center;
+        
+        .caption{
+            text-indent: 20px;
+            line-height: 2;
+        }
+        .aboutUs-pic{
+            background: url("/assets/images/about_pic.png");
+            background-size: cover;
+            width: 450px;
+            height: 450px;
+            margin: auto;
+        }
+        .aboutUs{
+            
             .aboutUsText{
                 margin-top: 10vw;
                 h3{
@@ -458,7 +655,9 @@ body{
                     }  
                 }
             }
+            
         }
+        
     }
     @media screen and (max-width: 767px){
         #aboutUsSection{
