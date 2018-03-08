@@ -1,0 +1,115 @@
+.schedule-section{
+    background: url("../images/banner.jpg")center center no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    .custom-padding-100{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .black-whole{
+        background-color: rgba(0,0,0,.3);
+        width: 100%;
+        margin-top: 100px;
+        .black-left{
+            background-color: rgba(0,0,0,.5);
+            width: 100%;
+            // height: 500px;
+            .departure-box{
+                background-color: white;
+                width: 100%;
+                height: 200px;
+                .table-align-center{
+                    vertical-align: middle;
+                }
+                .flex-center{
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .circle{
+                    background-color: #ffff3f;
+                    border: 2px solid black;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                }
+                .box-number{
+                    background-color: white;
+                    border: 2px solid black;
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                }
+            }
+            .return-box{
+                background-color: white;
+                width: 100%;
+                height: 200px;
+                .table-align-center{
+                    vertical-align: middle;
+                }
+                .flex-center{
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .circle{
+                    background-color: #ffff3f;
+                    border: 2px solid black;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                }
+                .box-number{
+                    background-color: white;
+                    border: 2px solid black;
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                }
+            }
+        }
+        .booking-summary{
+            background-color: #ff2301;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .booking-content{
+            background-color: #a7a9ac;
+            width: 100%;
+            // height: 400px;
+            .yellow-box{
+                background: #ffff3f;
+                width: 100%;
+                height: 50px;
+            }
+            .flex-center{
+                display: flex;
+                align-items: center;
+                height: 50px;
+                
+            }
+            .white-box{
+                background: white;
+                width: 100%;
+                height: 50px;
+            }
+            .flex-center{
+                display: flex;
+                align-items: center;
+                height: 50px;
+                
+            }
+            .additional-fees{
+                background-color: white;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    }
+}
