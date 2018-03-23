@@ -7,68 +7,157 @@
         padding-left: 100px;
         padding-right: 100px;
     }
+
+    .box{
+        background-color: white;
+        height: 70px;
+        width: 100%;
+        margin-bottom: 20px;
+        .number-1{
+            background: url("../images/numbers/1.png")center center;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
+            margin-right: 20px;
+        }
+        .number-2{
+            background: url("../images/numbers/2.png")center center;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
+            margin-right: 20px;
+        }
+        .number-3{
+            background: url("../images/numbers/3.png")center center;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
+            margin-right: 20px;
+        }
+        .number-4{
+            background: url("../images/numbers/4.png")center center;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
+            margin-right: 20px;
+        }
+
+        .flex{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        .background-gray-active{
+            background-color: gray;
+            width: 100%;
+            height: 50px;
+
+            padding: 0 20px;
+        }
+    }
     .black-whole{
         background-color: rgba(0,0,0,.3);
         width: 100%;
-        margin-top: 100px;
+        // margin-top: 100px;
+        margin-right:0;
+        margin-left: 0;
+        .padding-top-bot{
+            padding: 20px 0 20px 0;
+        }
+        .table-align-center{
+            vertical-align: middle;
+        }
+        .flex-center{
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+        .circle{
+            background-color: #ffff3f;
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+        .box-number{
+            background-color: white;
+            border: 2px solid black;
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+        
         .black-left{
             background-color: rgba(0,0,0,.5);
             width: 100%;
+            padding: 20px;
             // height: 500px;
+            .btn-proceed{
+                color: #ff2301;
+                background-color: white;
+                width: 100%;
+                height: 70px;
+                font-weight: bold;
+                border-radius: 0;
+                border: none;
+                a{
+                    text-decoration: none;
+                    color: #ff2301;
+                    font-size: 18px;
+                }
+            }
+            .btn-proceed:hover{
+                color: white;
+                background-color: #ff2301;
+                a{ 
+                    color: white;
+                }
+            }
+            .btn-back{
+                color: #ff2301;
+                background-color: white;
+                width: 100%;
+                height: 70px;
+                font-weight: bold;
+                
+                border-radius: 0;
+                border: none;
+                a{
+                    text-decoration: none;
+                    color: #ff2301; 
+                    font-size: 18px;
+                }
+            }
+            .btn-back:hover{
+                color: white;
+                background-color: #ff2301;
+                a{ 
+                    color: white;
+                }
+            }
             .departure-box{
                 background-color: white;
                 width: 100%;
-                height: 200px;
-                .table-align-center{
-                    vertical-align: middle;
+                // height: 200px;
+                .flex-main-table{
+                    display: flex;
+                    .flex-table{
+                        flex: 1;
+                    }
                 }
-                .flex-center{
-                    display: flex !important;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .circle{
-                    background-color: #ffff3f;
-                    border: 2px solid black;
-                    border-radius: 50%;
-                    width: 20px;
-                    height: 20px;
-                    display: block;
-                }
-                .box-number{
-                    background-color: white;
-                    border: 2px solid black;
-                    width: 30px;
-                    height: 30px;
-                    display: block;
-                }
+                
             }
             .return-box{
                 background-color: white;
                 width: 100%;
-                height: 200px;
-                .table-align-center{
-                    vertical-align: middle;
-                }
-                .flex-center{
-                    display: flex !important;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .circle{
-                    background-color: #ffff3f;
-                    border: 2px solid black;
-                    border-radius: 50%;
-                    width: 20px;
-                    height: 20px;
-                    display: block;
-                }
-                .box-number{
-                    background-color: white;
-                    border: 2px solid black;
-                    width: 30px;
-                    height: 30px;
-                    display: block;
+                // height: 200px;
+                .flex-main-table{
+                    display: flex;
+                    .flex-table{
+                        flex: 1;
+                    }
                 }
             }
         }
@@ -83,6 +172,12 @@
             background-color: #a7a9ac;
             width: 100%;
             // height: 400px;
+            .title{
+                font-weight: bold;
+            }
+            .padding-left-right{
+                padding: 0 20px;
+            }
             .yellow-box{
                 background: #ffff3f;
                 width: 100%;
@@ -108,8 +203,32 @@
             .additional-fees{
                 background-color: white;
                 width: 100%;
-                padding: 20px;
+                padding: 20px 50px;
+                .align-end{
+                    text-align: end;
+                }
             }
+            
+            .sub-total-below{
+                text-align: end;
+                font-weight: bold;
+            }
+            .grand-total{
+                background-color: #ff2301;
+                padding: 20px;
+                width: 100%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .number{
+                    font-size: 5vh;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                }
+            }
+
         }
     }
     
@@ -137,6 +256,13 @@
     }
 }
 
+@media (max-width: 500px) and (min-width:360px){
+    .flex-main-table{
+        // display: flex;
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 768px) and (min-width:360px){
     .schedule-section{ 
         & .container-fluid{
@@ -145,7 +271,67 @@
     }
 }
 
-@media (max-width: 1000px) and (min-width:360px){
+@media (max-width: 992px) and (min-width:360px){
+    .schedule-section{ 
+        & .container-fluid{
+            & .tabs-label{
+                display: none;
+            }
+            & .flex{
+                display: flex;
+                align-items: center;
+                height: 50px;
+                justify-content: center;
+            }
+
+            & .background-gray-active{
+                padding: 0;
+            }
+
+            & .number-1{
+                margin-right: 0;
+            }
+            & .number-2{
+                margin-right: 0;
+            }
+            & .number-3{
+                margin-right: 0;
+            }
+            & .number-4{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) and (min-width:991px){
+
+    .return{
+        width: 100%;
+    }
+    .break{
+        clear: both;
+    }
+}
+
+@media (max-width: 1300px) and (min-width:768px){
+    .schedule-section{ 
+        & .container-fluid{
+            padding: 0 20px !important;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width:768px){
+    .schedule-section{ 
+        & .container-fluid{
+            padding-top: 50px !important;
+        }
+    }
+}
+
+
+@media (max-width: 991px) and (min-width:360px){
     .width-100{
         width: 100% !important;
     }
@@ -161,11 +347,3 @@
     
 }
 
-@media (max-width: 1300px) and (min-width:1000px){
-    .return{
-        width: 100%;
-    }
-    .break{
-        clear: both;
-    }
-}
