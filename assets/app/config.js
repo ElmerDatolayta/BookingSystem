@@ -38,6 +38,7 @@ angular.module('BookingApplication')
     .state('booking', {
         url: '/booking',
         controller: 'scheduleController',
+        controllerAs: 'vm',
         templateUrl: 'assets/app/template/booking.html'
     });
 

@@ -1,0 +1,121 @@
+.payment{
+    background-color: #ffff3f;
+    width: 95%;
+    padding: 15px;
+    display: flex;
+    .payment-label{
+        width: 60%;
+        .four-hours{
+            background: #ff2301;
+            color: white;
+            padding: 0 5px;
+            font-weight: bold;
+        }
+    }
+    .ref{
+        margin-right: -50px;
+        background-color: #ff2301;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ref-number{
+            margin: 0;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+.content{
+    .padding-custom{
+        padding-top: 10px;
+    }
+    .container-overlay{
+        position: relative;
+        // width: 50%;
+    }
+    .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: 6px;
+    }
+    .text {
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        padding: 10px 32px;
+    }
+    .image{
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .container-overlay:hover {
+        .image{
+            opacity: 0.3;
+        }
+        .middle{
+            opacity: 1 !important;
+        }
+    }
+    .mlhuillier{
+    background: url("../images/logo-small/mlhuillier.jpg") center center no-repeat;
+    background-size: cover;
+    height: 80px;
+    width: 100%;
+    }
+    .gcash{
+        background: url("../images/logo-small/gcash.jpg") center center no-repeat;
+        background-size: cover;
+        height: 80px;
+        width: 100%;
+    }
+    .cebuana{
+        background: url("../images/logo-small/cebuana.jpg") center center no-repeat;
+        background-size: cover;
+        height: 100px;
+        width: 100%;
+    }
+    .ecpay{
+        background: url("../images/logo-small/ecpay.jpg") center center no-repeat;
+        background-size: cover;
+        height: 120px;
+        width: 100%;
+        // margin-top: 5px;
+    }
+    .smart-money{
+        background: url("../images/logo-small/smart-money.jpg") center center no-repeat;
+        background-size: cover;
+        height: 120px;
+        width: 100%;
+        // margin-top: 5px;
+    }
+    .lbc{
+        background: url("../images/logo-small/lbc.jpg")center center;
+        background-size: cover;
+        height: 250px;
+        width: 100%;
+    }
+    .palawan{
+        background: url("../images/logo-small/palawan.jpg")center center;
+        background-size: cover;
+        height: 250px;
+        width: 100%;
+    }
+    .over-the-counter{
+        background: url("../images/logo-small/over-the-counter.png")center center;
+        background-size: cover;
+        height: 100px;
+        width: 100%;
+    }
+}
