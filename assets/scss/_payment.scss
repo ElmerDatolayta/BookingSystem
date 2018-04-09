@@ -27,13 +27,19 @@
     }
 }
 .content{
-    .padding-custom{
+    .padding-top-right{
         padding-top: 10px;
+        padding-right: 3px;
+    }
+    .padding-top-left{
+        padding-top: 10px;
+        padding-left: 3px;
     }
     .container-overlay{
         position: relative;
         // width: 50%;
     }
+    
     .middle {
         transition: .5s ease;
         opacity: 0;
@@ -118,4 +124,50 @@
         height: 100px;
         width: 100%;
     }
+    .paypal{
+        background: url("../images/logo-small/paypal.jpg")center center;
+        background-size: cover;
+        height: 100px;
+        width: 100%;
+    }
+    .finish{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        .btn-finish{
+            background: #ff2301;
+            padding: 20px 80px 20px 100px;
+            color: white;
+            width: 100%;
+            font-size: 20px;
+            border-radius: 0;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            &:before{
+                content: "\f0da";
+                font-family: FontAwesome;
+                font-size: 40px;
+                color: white;
+            }
+        }
+    }
 }
+@media (max-width: 767px) and (min-width:320px){
+    .payment{
+        background-color: #ffff3f;
+        width: 95%;
+        padding: 15px;
+        display: block;
+    }
+    .padding-top-right{
+        padding: 10px 0 0 0 !important;
+    }
+    .padding-top-left{
+        padding: 10px 0 0 0 !important;
+    }
+}
+
+
