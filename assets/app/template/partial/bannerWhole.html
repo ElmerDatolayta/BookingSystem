@@ -18,15 +18,17 @@
                                     data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
                                     <option value="" disabled selected>Select Origin</option>
                             </select>
-                            <select class="custom-dropdown">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
+                            <select class="custom-dropdown margin-bottom-10"
+                                    data-ng-model="vm.origin"
+                                    data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
+                                    <option value="" disabled selected>Select Destination</option>
                             </select>
                             <div class="tabs btn-group">
-                                <button type="button" class="btn text-uppercase btn-default active"><a href="#oneWay">One Way</a></button>
-                                <button type="button" class="btn text-uppercase btn-default"><a href="#roundTrip">Round Trip</a></button>
+                                <!-- <button type="button" class="btn text-uppercase btn-default active"><a href="#oneWay">One Way</a></button>
+                                <button type="button" class="btn text-uppercase btn-default"><a href="#roundTrip">Round Trip</a></button> -->
+                                <!-- <label class="btn btn-primary ng-untouched ng-valid ng-not-empty ng-dirty" ng-model="radioModel" uib-btn-radio="'Middle'" style="">Middle</label> -->
+                                <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'OneWay'">One Way</label>
+                                <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'RoundTrip'">Round Trip</label>
                             </div>
                             <div id="oneWay">
                                 
