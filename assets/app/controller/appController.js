@@ -12,4 +12,16 @@ angular.module('BookingApplication')
     vm.search = function() {
         $state.go('booking');
     };
+
+    function getLocations() {
+        appService.getLocation().then(function(response) {
+            vm.locationList = response.data;
+        })
+    }
+
+    function init() {
+        getLocations();
+    }
+
+    init();
 }]);

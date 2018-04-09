@@ -12,10 +12,10 @@
                             <div class="background-gray-active flex"><span class="number-2"></span><span class="tabs-label">Trip Details</span></div>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
-                            <div class="flex"><span class="number-3"></span><span class="tabs-label">Passenger Detail</span></div>
+                            <div class="flex" data-ng-class="{'background-gray-active': vm.currentTab >= vm.tabsValue.PASSENGER_DETAILS}"><span class="number-3"></span><span class="tabs-label">Passenger Detail</span></div>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
-                            <div class="flex"><span class="number-4"></span><span class="tabs-label">Payment</span></div>
+                            <div class="flex" data-ng-class="{'background-gray-active': vm.currentTab >= vm.tabsValue.PAYMENT}"><span class="number-4"></span><span class="tabs-label">Payment</span></div>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="col-md-8">
                 <div class="padding-top-bot width-100">
                     <div class="black-left">
-                        <slick arrows="false" touch-move="false" infinite="false">
+                        <slick arrows="false" touch-move="false" infinite="false" draggable="false">
                             <div>
                                 <ng-include src="'assets/app/template/partial/tripDetails.html'"></ng-include>
                             </div>
@@ -37,7 +37,7 @@
                                 <ng-include src="'assets/app/template/partial/payment.html'"></ng-include>
                             </div>
                         </slick>
-                        <div class="row">
+                        <div class="row" data-ng-if="vm.currentTab < vm.tabsValue.PAYMENT">
                             <div class="col-md-8 col-md-offset-4">
                                 <div class="col-sm-5 col-xs-5">
                                     <button type="button" class="btn btn-back text-uppercase margin-top-10" data-ng-click="vm.back()"><a>Back</a></button>
