@@ -15,10 +15,14 @@ $text-lg : 18px;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
+        .border-right{
+            border-right: 2px solid white;
+            height: 20px;
+        }
         a:not(.navbar-brand){
             text-transform: uppercase;
             padding: 40px 15px;
-            font-weight: bold;
+            font-weight: 500;
             color: #ffffff;
             
             -webkit-transition: padding .5s ease-in-out,padding .5s ease-in-out;
@@ -38,10 +42,10 @@ $text-lg : 18px;
             }
         }
          .navbar-brand{
-            padding: 25px 15px;
+            padding: 15px 15px;
             font-weight: bold;
             color: #ffffff;
-            
+            width: 250px;
             -webkit-transition: padding .5s ease-in-out,padding .5s ease-in-out;
             -moz-transition: padding .5s ease-in-out,padding .5s ease-in-out;
             transition: padding .5s ease-in-out,padding .5s ease-in-out;
@@ -181,11 +185,16 @@ $text-lg : 18px;
             .booking-content{
                 width: 100%;
                 height: 70px;
-                
-                .custom-dropdown{
+                .form-control:focus{
+                    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+                    box-shadow: rgba(0, 0, 0, 0);
+                }
+                .custom-select{
                     width: 100%;
-                    padding: 20px;
+                    padding: 30px;
                     background-color: rgba(255,255,255,.3);
+                    border-radius: 0;
+                    border:none; 
                 }    
 
                 .tabs{
@@ -203,9 +212,14 @@ $text-lg : 18px;
                     
                     padding: 15px 15px;
                     background-color: rgba(131,126,137,.6);
-                    .date-box{
-                        padding: 15px;
+                    .flex-1{
+                        flex: 1;
+                        .date-box{
+                            padding: 10px;
+                            width: 100%;
+                        }
                     }
+                    
                 }
 
                 .btn-check{
@@ -2077,6 +2091,18 @@ $text-lg : 18px;
                     }
                 }
             }
+        }
+    }
+    @media (max-width: 767px) and (min-width:320px){
+        .bannerText{
+            z-index: 2;
+            position: unset !important;
+            // right: 0;
+            
+            width: 100%;
+            padding: 30px 30px;
+            background-color: rgba(0,0,0,.5);
+            min-height: 500px;
         }
     }
 }
