@@ -9,6 +9,7 @@
   "author": "Creative Dev Labs",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-bower-files": "^0.2.7",
     "gulp-clean": "^0.3.2",

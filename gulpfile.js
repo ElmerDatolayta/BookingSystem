@@ -9,8 +9,16 @@ var inject = require('gulp-inject');
 var plumber = require('gulp-plumber');
 var wiredep = require('wiredep').stream;
 var gulpBowerFiles = require('gulp-bower-files');
+var browserSync = require('browser-sync').create();
 
 
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./public/"
+        }
+    });
+});
 
 gulp.task('clean-js',function(){
     return gulp.src('./public/assets/js/*.min.js')
@@ -63,11 +71,11 @@ gulp.task('html',function(){
 });
 
 gulp.task('watch', function(){
-    gulp.watch(['index.html'],['html']);
-    gulp.watch('./assets/app/template/**/*',['angular-template']);
-    gulp.watch('./assets/js/*.js',['js']);
-    gulp.watch('./assets/scss/*.scss',['styles']);
-    gulp.watch('./assets/app/**/*.js',['angular-js']);
+    gulp.watch(['index.html'],['html']).on('change', browserSync.reload);
+    gulp.watch('./assets/app/template/**/*',['angular-template']).on('change', browserSync.reload);
+    gulp.watch('./assets/js/*.js',['js']).on('change', browserSync.reload);
+    gulp.watch('./assets/scss/*.scss',['styles']).on('change', browserSync.reload);
+    gulp.watch('./assets/app/**/*.js',['angular-js']).on('change', browserSync.reload);
 });
 
 gulp.task("bower-files", function(){
@@ -108,4 +116,4 @@ gulp.task('clean-angular-js',function(){
 });
 
 
-gulp.task('default',['bower-files','styles','js','image','font','angular-js','angular-template','html','watch']);
+gulp.task('default',['browser-sync','bower-files','styles','js','image','font','angular-js','angular-template','html','watch']);

@@ -4,16 +4,16 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8 flex flex-center">
+                <div class="col-md-7 col-sm-6 hidden-xs flex flex-center">
                     <h1 class="text-center color-white">Sample</h1>
                 </div>
-                <div class="col-md-4 flex flex-end">
+                <div class="col-md-5 col-sm-6 flex flex-end">
                     <div class="bannerText">
                         <div class="book-title">
                             <img src="assets/images/book-icon.png" class="booking-icon text-uppercase" alt="Booking-Icon"/><span class="book-label">Book Online</span>
                         </div>
                         <div class="booking-content">
-                            <select class="custom-dropdown margin-bottom-10"
+                            <select class="custom-dropdown custom-select margin-bottom-10"
                                     data-ng-model="vm.origin"
                                     data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
                                     <option value="" disabled selected>Select Origin</option>
@@ -35,12 +35,12 @@
                             </div>   
                             <div id="roundTrip">
                                 <div class="date">
-                                    <input type="date" class="date-box">
-                                    <input type="date" class="date-box">
+                                    <div class="flex-1"> <input type="date" class="date-box"></div>
+                                    <div class="flex-1"> <input type="date" class="date-box"></div>
                                 </div>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-check text-uppercase btn-default margin-top-10 hvr-icon-pulse-grow" data-ng-click="vm.search()"><a href="#">Check Availability</a></button>
+                                <button type="button" class="btn btn-check text-uppercase btn-default margin-top-10 hvr-icon-pulse-grow" data-ng-click="vm.search()"><a>Check Availability</a></button>
                             </div>
                         </div>
                     </div>
