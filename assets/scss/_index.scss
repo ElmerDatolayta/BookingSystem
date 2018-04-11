@@ -15,10 +15,6 @@ $text-lg : 18px;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
-        .border-right{
-            border-right: 2px solid white;
-            height: 20px;
-        }
         a:not(.navbar-brand){
             text-transform: uppercase;
             padding: 40px 15px;
@@ -168,7 +164,7 @@ $text-lg : 18px;
             width: 100%;
             padding: 30px 30px;
             background-color: rgba(0,0,0,.5);
-            min-height: 500px;
+            // min-height: 500px;
             .book-title{
                 background-color: white;
                 width: 100%;
@@ -184,7 +180,7 @@ $text-lg : 18px;
             }
             .booking-content{
                 width: 100%;
-                height: 70px;
+                // height: 70px;
                 .form-control:focus{
                     -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
                     box-shadow: rgba(0, 0, 0, 0);
@@ -215,7 +211,7 @@ $text-lg : 18px;
                     .flex-1{
                         flex: 1;
                         .date-box{
-                            padding: 10px;
+                            padding: 5px;
                             width: 100%;
                         }
                     }
@@ -466,9 +462,9 @@ $text-lg : 18px;
             height: 100vh;
             .get-in-touch{
                 width: 400px;
-                height: 500px;
+                // height: 500px;
                 background-color: rgba(0,0,0,.5);
-                padding: 4%; 
+                padding: 3%; 
                 .textbox{
                     padding: 20px;
                 }
@@ -497,7 +493,7 @@ $text-lg : 18px;
             }
             .contact-us{
                 width: 350px;
-                height: 500px;
+                // height: 500px;
                 background-color: #ff0000;
                 padding: 4%;
                 margin-top: 0;
@@ -549,18 +545,17 @@ $text-lg : 18px;
             line-height: 2;
             color: white;
         }
-
         .pic1{
             background: url("/assets/images/offer_pic1.jpg");
             background-size: cover;
-            height: 300px;
-            width: 500px;
+            height: 20vw;
+            width: 100%;
         }
         .pic2{
             background: url("/assets/images/offer_pic2.jpg");
             background-size: cover;
-            height: 300px;
-            width: 400px;
+            height: 20vw;
+            width: 100%;
         }
     }
 
@@ -578,11 +573,14 @@ $text-lg : 18px;
             line-height: 2;
         }
         .aboutUs-pic{
-            background: url("/assets/images/about_pic.png");
-            background-size: cover;
-            width: 450px;
-            height: 450px;
+            width: 400px;
+            height: 400px;
             margin: auto;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
         }
         .aboutUs{
             
@@ -2034,6 +2032,10 @@ $text-lg : 18px;
         }
     }
     @media screen and (max-width:767px) {
+        .flex-end{
+            justify-content: center !important;
+            margin: 20px;
+        }
         #footer{
             .container-fluid{
                 .row{
@@ -2093,7 +2095,7 @@ $text-lg : 18px;
             }
         }
     }
-    @media (max-width: 767px) and (min-width:320px){
+    @media (max-width: 596px) and (min-width:320px){
         .bannerText{
             z-index: 2;
             position: unset !important;
@@ -2103,6 +2105,88 @@ $text-lg : 18px;
             padding: 30px 30px;
             background-color: rgba(0,0,0,.5);
             min-height: 500px;
+        }
+        .map{
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+        .flex-map{
+            
+            display: block !important;
+            align-items: center;
+            height: 100vh;
+            .get-in-touch{
+                width: 100% !important;
+                // height: 500px;
+                background-color: rgba(0,0,0,.5);
+                padding: 4%; 
+                .textbox{
+                    padding: 20px;
+                }
+                .flex{
+                    display: flex;
+                    align-items: center;
+                    height: 50px;
+                    .fa-facebook-square{
+                        font-size: 35px;
+                        color: white;
+                    }
+                    .fa-youtube-play{
+                        font-size: 45px;
+                        color: white;
+                    }
+                    .btn-submit{
+                        width: 100%;
+                        padding: 10px;
+                        background-color: #ff0000;
+                        color: white;
+                        border-radius: 0;
+                    }
+                }
+                
+                .contact-us{
+                    
+                    width: 100% !important;
+                    // height: 500px;
+                    background-color: #ff0000;
+                    padding: 3%;
+                    margin-top: 0;
+                    .address-icon{
+                        background: url("/assets/images/contactIcons/address.png");
+                        background-size: cover;
+                        height: 50px;
+                        width: 50px;
+                    }
+    
+                    .text{
+                        color: white;
+                        font-size: 20px;
+                    }
+    
+                    .email-icon{
+                        background: url("/assets/images/contactIcons/mail.png");
+                        background-size: cover;
+                        height: 50px;
+                        width: 50px;
+                        color: white;
+                    }
+                    .tel-icon{
+                        background: url("/assets/images/contactIcons/tel.png");
+                        background-size: cover;
+                        height: 50px;
+                        width: 50px;
+                        color: white;
+                    }
+                    .phone-icon{
+                        background: url("/assets/images/contactIcons/phone.png");
+                        background-size: cover;
+                        height: 50px;
+                        width: 50px;
+                        color: white;
+                    }
+                }    
+            }
         }
     }
 }
