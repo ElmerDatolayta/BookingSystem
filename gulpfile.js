@@ -10,6 +10,8 @@ var plumber = require('gulp-plumber');
 var wiredep = require('wiredep').stream;
 var gulpBowerFiles = require('gulp-bower-files');
 var browserSync = require('browser-sync').create();
+var babel = require('gulp-babel');
+
 
 
 gulp.task('browser-sync', function() {
@@ -45,6 +47,9 @@ gulp.task('js',['clean-js'],function(){
             './assets/js/*.js'
         ]
     )
+    .pipe(babel({
+        presets: ['env']
+    }))
     .pipe(plumber())
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
@@ -99,6 +104,9 @@ gulp.task('angular-js',['clean-angular-js'],function(){
             './assets/app/**/*.js'
         ]
     )
+    .pipe(babel({
+        presets: ['env']
+    }))
     .pipe(plumber())
     .pipe(rename({suffix: '.min'}))
     // .pipe(uglify())
