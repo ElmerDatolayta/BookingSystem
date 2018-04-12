@@ -55,26 +55,12 @@
         <div class="row margin-top-40">
             <div class="col-md-12">
                 <table class="table table-align-center">
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Regular</td>
-                        <td class="color-white text-uppercase">P 250.00</td>
-                        </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Student</td>
-                        <td class="color-white text-uppercase">P 200.00</td>
+                    <tr data-ng-repeat="type in vm.passengerTypes">
+                        <td><div class="flex-center"><span class="circle margin-right-10 text-center" data-ng-click="vm.decrement(type)">-</span><span class="box-number margin-right-10 flex-center"><span>{{type.count}}</span></span><span class="circle text-center" data-ng-click="vm.increment(type)">+</span></div></td>
+                        <td class="color-white text-uppercase">{{type.typeName}}</td>
+                        <td class="color-white text-uppercase">{{type.fare.toFixed(2)}} PHP</td>
                     </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Senior Citizen</td>
-                        <td class="color-white text-uppercase">P 200.00</td>
-                    </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Children</td>
-                        <td class="color-white text-uppercase">P 150.00</td>
-                    </tr>
+                    
                 </table>
             </div>
         </div>
@@ -136,25 +122,10 @@
         <div class="row margin-top-40">
             <div class="col-md-12">
                 <table class="table table-align-center">
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Regular</td>
-                        <td class="color-white text-uppercase">P 250.00</td>
-                        </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Student</td>
-                        <td class="color-white text-uppercase">P 200.00</td>
-                    </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Senior Citizen</td>
-                        <td class="color-white text-uppercase">P 200.00</td>
-                    </tr>
-                    <tr>
-                        <td><div class="flex-center"><span class="circle margin-right-10 text-center">-</span><span class="box-number margin-right-10 flex-center"><span>2</span></span><span class="circle text-center">+</span></div></td>
-                        <td class="color-white text-uppercase">Children</td>
-                        <td class="color-white text-uppercase">P 150.00</td>
+                    <tr data-ng-repeat="type in vm.returnPassengerTypes">
+                        <td><div class="flex-center"><span class="circle margin-right-10 text-center" data-ng-click="vm.decrementReturn(type)">-</span><span class="box-number margin-right-10 flex-center"><span>{{type.count}}</span></span><span class="circle text-center" data-ng-click="vm.incrementReturn(type)">+</span></div></td>
+                        <td class="color-white text-uppercase">{{type.typeName}}</td>
+                        <td class="color-white text-uppercase">{{type.fare.toFixed(2)}} PHP</td>
                     </tr>
                 </table>
             </div>
