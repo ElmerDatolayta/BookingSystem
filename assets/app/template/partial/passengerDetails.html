@@ -72,7 +72,18 @@
                     <input type="text" class="form-control textbox margin-top-5" placeholder="FIRST NAME">
                     <div class="birthdate-flex margin-top-5">
                         <div class="flex-1 flex-basis"><label class="text-uppercase margin-0">Birthdate:</label></div>
-                        <div class="flex-1"><input type="text" class="form-control" id=""><span class="fa fa-calendar position-abs"></span></div>
+                        <div class="flex-1">
+                            <input type="text" class="form-control" id="" 
+                                   uib-datepicker-popup="MM/dd/yyyy" 
+                                   ng-init="vm.birthdayOpen = false"
+                                   ng-model="vm.birthday" is-open="vm.birthdayOpen" 
+                                   ng-click="vm.birthdayOpen = !vm.birthdayOpen"
+                                   datepicker-options="vn.dateOptions" 
+                                   close-text="Close" 
+                                   alt-input-formats="vm.altInputFormats"
+                                   popup-placement="bottom-right">
+                            <span class="fa fa-calendar position-abs"></span>
+                        </div>
                     </div>
                 </div>
             </div>

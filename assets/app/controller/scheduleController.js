@@ -20,7 +20,13 @@ angular.module('BookingApplication').controller('scheduleController',['$scope','
             vm.currentTab--;
         }
     }
-
+    vm.altInputFormats = ['M!/d!/yyyy'];
+    vm.dateOptions = {
+        formatYear: 'yy',
+        maxDate: new Date(2020, 5, 22),
+        minDate: new Date(),
+        startingDay: 1
+      };
     $('.slick-slider').slick({
         draggable: false
     });
