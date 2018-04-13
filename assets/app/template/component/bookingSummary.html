@@ -1,0 +1,39 @@
+<div class="row padding-left-0 padding-right-0">
+    <div class="text-uppercase flex-label flex-label-header">
+        <p class="title font-size-25">Hilongos to Ubay</p>
+        <p class="title font-size-25">{{vm.getGrandTotal().toFixed(2) | number:2}} PHP</p>
+    </div>
+</div>
+<div class="row padding-left-right">
+    <div class="col-sm-12 padding-0">
+        <h4 class="text-uppercase title">Fare, Taxes, and Fees</h4>
+        <div class="col-sm-12 padding-0">
+            <div class="text-uppercase flex-label" data-ng-repeat="type in vm.passengerTypes">
+                <p>{{type.typeName}}</p>
+                <p class="text-right">{{type.count}} X {{type.fare.toFixed(2)}} PHP</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="additional-fees">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-uppercase flex-label">
+                <p>Fares</p>
+                <p class="align-end">{{vm.getFares().toFixed(2) | number:2}} PHP</p>
+            </div>
+            <div class="text-uppercase flex-label">
+                <p>Processing Fee</p>
+                <p class="align-end">{{vm.getProcessingFee().toFixed(2)}} PHP</p>
+            </div>
+            <div class="text-uppercase flex-label">
+                <p>Vat</p>
+                <p class="align-end">{{vm.getVat().toFixed(2)}} PHP</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row padding-left-right">
+    <h3 class="sub-total-below">{{vm.getGrandTotal().toFixed(2) | number:2}} PHP</h3>
+</div>

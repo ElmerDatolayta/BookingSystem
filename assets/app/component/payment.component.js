@@ -3,10 +3,10 @@ angular
      .component('paymentInfo', {
           templateUrl: 'assets/app/template/component/payment.html',
           bindings: {
-               tripDetails: "<"
+            bookingData: "<"
           },
-          controller: function() {
-               console.log(this.name);
+          controller: () => {
+              
           }
 
      });

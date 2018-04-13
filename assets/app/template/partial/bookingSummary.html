@@ -3,90 +3,11 @@
         <h2 class="text-uppercase color-white margin-left-10 margin-0">Booking Summary</h2>
     </div>
     <div class="booking-content margin-top-5 padding-20">
-        <div class="row padding-left-0 padding-right-0">
-            <div class="text-uppercase flex-label flex-label-header">
-                <p class="title font-size-25">Hilongos to Ubay</p>
-                <p class="title font-size-25">{{vm.grandTotal.toFixed(2) | number:2}} PHP</p>
-            </div>
-        </div>
-        <div class="row padding-left-right">
-            <div class="col-sm-12 padding-0">
-                <h4 class="text-uppercase title">Fare, Taxes, and Fees</h4>
-                <div class="col-sm-12 padding-0">
-                    <div class="text-uppercase flex-label" data-ng-repeat="type in vm.passengerTypes">
-                        <p>{{type.typeName}}</p>
-                        <p class="text-right">{{type.count}} X {{type.fare.toFixed(2)}} PHP</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="additional-fees">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="text-uppercase flex-label">
-                        <p>Fares</p>
-                        <p class="align-end">{{vm.totalFare.toFixed(2) | number:2}} PHP</p>
-                    </div>
-                    <div class="text-uppercase flex-label">
-                        <p>Processing Fee</p>
-                        <p class="align-end">{{vm.totalFee.toFixed(2)}} PHP</p>
-                    </div>
-                    <div class="text-uppercase flex-label">
-                        <p>Vat</p>
-                        <p class="align-end">{{vm.totalVat.toFixed(2)}} PHP</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row padding-left-right">
-            <h3 class="sub-total-below">{{vm.grandTotal.toFixed(2) | number:2}} PHP</h3>
-        </div>
-        
-        <div class="row padding-left-0 padding-right-0">
-            <div class="text-uppercase flex-label flex-label-header">
-                <p class="title font-size-25">Hilongos to Ubay</p>
-                <p class="title font-size-25">{{vm.grandTotalReturn.toFixed(2) | number:2}} PHP</p>
-            </div>
-        </div>
-        <div class="row padding-left-right">
-            <div class="col-sm-12 padding-0">
-                <h4 class="text-uppercase title">Fare, Taxes, and Fees</h4>
-                <div class="col-sm-12 padding-0">
-                    <div class="text-uppercase flex-label" data-ng-repeat="type in vm.returnPassengerTypes">
-                        <p>{{type.typeName}}</p>
-                        <p class="text-right">{{type.count}} X {{type.fare.toFixed(2)}} PHP</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="additional-fees">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="text-uppercase flex-label">
-                        <p>Fares</p>
-                        <p class="align-end">{{vm.totalFareReturn.toFixed(2) | number:2}} PHP</p>
-                    </div>
-                    <div class="text-uppercase flex-label">
-                        <p>Processing Fee</p>
-                        <p class="align-end">{{vm.totalFeeReturn.toFixed(2)}} PHP</p>
-                    </div>
-                    <div class="text-uppercase flex-label">
-                        <p>Vat</p>
-                        <p class="align-end">{{vm.totalVatReturn.toFixed(2)}} PHP</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row padding-left-right">
-            <h3 class="sub-total-below">{{vm.grandTotalReturn.toFixed(2) | number:2}} PHP</h3>
-        </div>
-      
+        <booking-summary booking-data="vm.passengerTypes" total-data="vm.totalData" booking-type="1"></booking-summary>
+        <booking-summary booking-data="vm.returnPassengerTypes" total-data="vm.totalData" booking-type="2"></booking-summary>
         <h3 class="title">Grand Total</h3>
         <div class="grand-total">
-            <p class="number">{{vm.AllTotal.toFixed(2) | number:2}} PHP</p>
+            <p class="number">{{vm.getGrandTotal().toFixed(2) | number:2}} PHP</p>
         </div>
    
     </div>

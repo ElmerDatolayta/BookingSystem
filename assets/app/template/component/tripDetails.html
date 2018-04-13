@@ -1,0 +1,70 @@
+<div class="col-lg-6 col-md-12 col-sm-12 return">
+    <h2 class="text-uppercase color-white text-center margin-0">{{vm.typeName}}</h2>
+    <div class="departure-box  margin-top-15 padding-20">
+        <div class="flex-main-table">
+            <div class="flex-table">
+                <div class="table-responsive">
+                    <table class="table">       
+                        <tr>
+                            <th>Origin</th>
+                            <th>Hilongos</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Departure</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>02/02/18</td>
+                            </tr>
+                            <tr>
+                                <td>Time</td>
+                                <td>9:00AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+            <div class="flex-table">
+                <div class="table-responsive">
+                    <table class="table">       
+                        <tr>
+                            <th>Distination</th>
+                            <th>Ubay</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Arrival</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>02/02/18</td>
+                            </tr>
+                            <tr>
+                                <td>Time</td>
+                                <td>11:00AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-top-40">
+        <div class="col-md-12">
+            <table class="table table-align-center">
+                <tr data-ng-repeat="data in vm.bookingData">
+                    <td>
+                        <div class="flex-center">
+                            <span class="circle margin-right-10 text-center" data-ng-click="vm.removePersonCount(data)">-</span>
+                            <span class="box-number margin-right-10 flex-center"><span>{{data.count}}</span></span>
+                            <span class="circle text-center" data-ng-click="vm.addPersonCount(data)">+</span>
+                        </div>
+                    </td>
+                    <td class="color-white text-uppercase">{{data.typeName}}</td>
+                    <td class="color-white text-uppercase">{{data.fare.toFixed(2)}} PHP</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
