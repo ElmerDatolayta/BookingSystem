@@ -1,28 +1,49 @@
-<div>
+<div class="">
     <div class="type">
-        <div class="flex"><p>Student</p></div>
-        <div class="flex"><p>Close Group</p><div class="close"><span class="fa fa-remove"></span></div></div>
+        <div class="flex"><p>{{vm.typeName}}</p></div>
+        <div class="flex"><p>Close Group</p><div class="close" data-ng-click="vm.removePersonCountAll()"><span class="fa fa-remove"></span></div></div>
     </div>
     <div class="outer-background">
-        <div class="content">
-            <div class="close">
-                <span class="fa fa-remove"></span>
-            </div>
+        <!-- <div class="content" data-ng-repeat="data in vm.bookingData | filter:vm.typeName" data-ng-if="vm.totalCount"> -->
+            <div class="content" data-ng-repeat="person in vm.bookingData.person track by $index">
+                <div class="close" data-ng-click="vm.removePersonCount($index)">
+                    <span class="fa fa-remove" ></span>
+                </div>
 
-            <p class="line-height-20">Guest name must match government-issued photo ID in Roman alphabet (A-Z). Any name changes after booking will require the purchase of a new ticket.</p>
-            <div class="row">
-                <div class="col-sm-6">
-                    <form>
-                        <div class="">
-                            <select name="" class="form-control custom-select" id="">
-                                <option value="" disabled selected class="text-uppercase">Select Gender:</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
+                <p class="line-height-20">Guest name must match government-issued photo ID in Roman alphabet (A-Z). Any name changes after booking will require the purchase of a new ticket.</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form name="vm.form">
+                            <div class="">
+                                <select name="" class="form-control custom-select" id="" data-ng-model="person.Gender" required>
+                                    <option value="" disabled selected class="text-uppercase">Select Gender:</option>
+                                    <option value="0">Male</option>
+                                    <option value="1">Female</option>
+                                </select>
+                            </div>
+                            <input required type="text" class="form-control textbox margin-top-5" placeholder="FIRST NAME" data-ng-model="person.FirstName">
+                    
+                            <select class="form-control custom-select margin-top-5" data-ng-model="person.Nationality" required>
+                                <option value="" disabled selected class="text-uppercase">Nationality/Region</option>
+                                <option value="1">Audi</option>
+                                <option value="2">BMW</option>
+                                <option value="3">Citroen</option>
+                                <option value="4">Ford</option>
+                                <option value="5">Honda</option>
+                                <option value="6">Jaguar</option>
+                                <option value="7">Land Rover</option>
+                                <option value="8">Mercedes</option>
+                                <option value="9">Mini</option>
+                                <option value="10">Nissan</option>
+                                <option value="11">Toyota</option>
+                                <option value="12">Volvo</option>
                             </select>
-                        </div>
-                        <input type="text" class="form-control textbox margin-top-5" placeholder="FIRST NAME">
-                
-                        <select class="form-control custom-select margin-top-5">
+                            
+                        </form>
+                    </div>
+                    <div class="col-sm-6">
+                    
+                        <select class="form-control custom-select" data-ng-model="person.Nationality">
                             <option value="" disabled selected class="text-uppercase">Nationality/Region</option>
                             <option value="1">Audi</option>
                             <option value="2">BMW</option>
@@ -38,47 +59,29 @@
                             <option value="12">Volvo</option>
                         </select>
                         
-                    </form>
-                </div>
-                <div class="col-sm-6">
-                
-                    <select class="form-control custom-select">
-                        <option value="" disabled selected class="text-uppercase">Nationality/Region</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
-                    </select>
-                    
-                    <input type="text" class="form-control textbox margin-top-5" placeholder="FIRST NAME">
-                    <div class="birthdate-flex margin-top-5">
-                        <div class="flex-1 flex-basis"><label class="text-uppercase margin-0">Birthdate:</label></div>
-                        <div class="flex-1">
-                            <input type="text" class="form-control" id="" 
-                                    uib-datepicker-popup="MM/dd/yyyy" 
-                                    ng-init="vm.birthdayOpen = false"
-                                    ng-model="vm.birthday" is-open="vm.birthdayOpen" 
-                                    ng-click="vm.birthdayOpen = !vm.birthdayOpen"
-                                    datepicker-options="vn.dateOptions" 
-                                    close-text="Close" 
-                                    alt-input-formats="vm.altInputFormats"
-                                    popup-placement="bottom-right">
-                            <span class="fa fa-calendar position-abs"></span>
+                        <input type="text" class="form-control textbox margin-top-5" placeholder="LAST NAME" data-ng-model="person.LastName">
+                        <div class="birthdate-flex margin-top-5">
+                            <div class="flex-1 flex-basis"><label class="text-uppercase margin-0">Birthdate:</label></div>
+                            <div class="flex-1">
+                                <input type="text" class="form-control" id="" 
+                                        uib-datepicker-popup="MM/dd/yyyy" 
+                                        ng-init="vm.birthdayOpen = false"
+                                        is-open="vm.birthdayOpen" 
+                                        ng-click="vm.birthdayOpen = !vm.birthdayOpen"
+                                        datepicker-options="vn.dateOptions" 
+                                        close-text="Close" 
+                                        alt-input-formats="vm.altInputFormats"
+                                        popup-placement="bottom-right"
+                                        data-ng-model="person.Birthdate">
+                                <span class="fa fa-calendar position-abs"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     <hr/>
-        <div class="content">
+        <!-- <div class="content">
             <div class="close">
                 <span class="fa fa-remove"></span>
             </div>
@@ -139,6 +142,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

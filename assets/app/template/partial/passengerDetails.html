@@ -9,4 +9,7 @@
         </div>
     </div>
 </div>
-<passenger-details></passenger-details>
+<!-- <passenger-details booking-data="vm.passengerTypes" total-data="vm.totalData" booking-type="1" type-name="'Departure'"></passenger-details> -->
+<div data-ng-repeat="data in vm.returnPassengerTypes" data-ng-if="data.count">
+    <passenger-details booking-data="data" type-name="data.typeName" type-data="vm.returnPassengerTypes" total-count="data.count"></passenger-details>
+</div>

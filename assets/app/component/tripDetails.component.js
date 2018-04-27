@@ -9,14 +9,23 @@ class TripDetailsCtrl {
         }
         return totalCount;
     }
-    addPersonCount(person) {
+    addPersonCount(data) {
         if (this.getTotalCount() < 9) {
-            person.count++;
+            data.count++;
+            const person = {
+                Gender: 0,
+                Nationality: 0,
+                FirstName: '',
+                LastName: '',
+                Birthdate: new Date()
+            };
+            data.person.push(person);
         }
     }
-    removePersonCount(person) {
-        if (person.count && this.getTotalCount() > 1) {
-            person.count--;
+    removePersonCount(data) {
+        if (data.count && this.getTotalCount() > 1) {
+            data.count--;
+            data.person.splice(0,1);
         }
     }
     $onInit() {

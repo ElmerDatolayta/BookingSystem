@@ -8,8 +8,12 @@ angular.module('BookingApplication')
         PASSENGER_DETAILS: 3,
         PAYMENT: 4,
     }
+    vm.form = {};
     vm.currentTab = vm.tabsValue.TRIP_DETAILS;
     vm.proceed = function() {
+        if (vm.currentTab === vm.tabsValue.TRIP_DETAILS) {
+            alert(vm.form.isValid());
+        }
         $('.slick-slider').slick('slickNext');
         vm.currentTab++;
     }
@@ -34,25 +38,37 @@ angular.module('BookingApplication')
             id: 1,
             count: 1,
             typeName: 'Regular',
-            fare: 250.00
+            fare: 250.00,
+            person : [
+                {
+                    Gender: 0,
+                    Nationality: 0,
+                    FirstName: '',
+                    LastName: '',
+                    Birthdate: new Date()
+                }
+            ]
         },
         {
             id: 2,
             count: 0,
             typeName: 'Student',
-            fare: 200.00
+            fare: 200.00,
+            person : []
         },
         {
             id: 3,
             count: 0,
             typeName: 'Senior Citizen',
-            fare: 200.00
+            fare: 200.00,
+            person : []
         },
         {
             id: 4,
             count: 0,
             typeName: 'Children',
-            fare: 150.00
+            fare: 150.00,
+            person : []
         }
     ];
 
