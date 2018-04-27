@@ -1,0 +1,39 @@
+<div id="memberLogin">
+    <div class="modal-header">
+        <h3 class="modal-title text-uppercase" id="modal-title">Member Login</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        
+        <form data-ng-submit="">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="email" class="form-control textbox" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control textbox" placeholder="Password">
+                </div>
+            </div>
+            <div class="row margin-top-20">
+                <div class="col-md-6">
+                    <h3>Forgot Password?</h3>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-login pull-right">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="text-left">Not a Member?</h3>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-signup" type="button" ng-click="$ctrl.cancel()">Signup</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-guest" type="button" ng-click="close()">Continue as Guest</button>
+            </div>
+        </div>
+    </div>
+</div>

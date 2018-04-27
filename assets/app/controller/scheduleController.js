@@ -1,6 +1,6 @@
 angular.module('BookingApplication')
-.controller('scheduleController',['$scope','appService','$location','$filter','$state', '$localStorage', '$sessionStorage',
-    function ($scope,appService,$location,$filter, $state, $localStorage, $sessionStorage){
+.controller('scheduleController',['$scope','appService','$location','$filter','$state', '$localStorage', '$sessionStorage', '$uibModal',
+    function ($scope,appService,$location,$filter, $state, $localStorage, $sessionStorage, $uibModal){
     var vm = this;
     vm.tabsValue = {
         SEARCH_TRIP: 1,
@@ -11,12 +11,29 @@ angular.module('BookingApplication')
     vm.form = {};
     vm.currentTab = vm.tabsValue.TRIP_DETAILS;
     vm.proceed = function() {
-        if (vm.currentTab === vm.tabsValue.TRIP_DETAILS) {
-            alert(vm.form.isValid());
-        }
-        $('.slick-slider').slick('slickNext');
-        vm.currentTab++;
-    }
+        const instance = vm.open('lg');
+        instance.result.then(() => {
+            $('.slick-slider').slick('slickNext');
+            vm.currentTab++;
+        });
+    };
+
+    vm.open = function (size) {
+        const modalInstance = $uibModal.open({
+          templateUrl: 'assets/app/template/modal/memberLogin.html',
+          controller: ($scope, $uibModalInstance) => {
+              $scope.close = () => {
+                $uibModalInstance.close();
+              }
+          },
+          size: size,
+          keyboard: false,
+          backdrop: 'static'
+        });
+    
+        return modalInstance;
+      };
+
     vm.back = function() {
         if (vm.currentTab === vm.tabsValue.TRIP_DETAILS) {
             $state.go('home');

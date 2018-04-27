@@ -1,0 +1,53 @@
+#memberLogin{
+    .modal-header{
+        background-color: #ff2301;
+        padding: 50px;
+        color: white;
+    }
+    .modal-body{
+        padding: 50px;
+        .textbox{
+            background-color: #a8a9ad;
+            color: white;
+            border-radius: 0;
+            border: none;
+            padding: 25px;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        ::placeholder {
+            color:white ;
+            opacity: 1; /* Firefox */
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+           color: white ;
+        }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+           color: white ;
+        }
+        .btn-login{
+            background-color: #ff2301;
+            padding: 15px 30%;
+            border-radius: 0;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    .modal-footer{
+        background-color: #a8a9ad;
+        padding: 50px;
+        .btn-signup, .btn-guest{
+            width: 100%;
+            background-color: #ff2301;
+            padding: 15px;
+            color: white;
+            border-radius: 0;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    }
+}
