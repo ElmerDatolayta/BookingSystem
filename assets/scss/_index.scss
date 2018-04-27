@@ -156,6 +156,22 @@ $text-lg : 18px;
             align-items: center;
             height: 100vh;
         }
+        .bg-desc {
+            background-color: rgba(255,255,255,.7);
+            padding: 10px 40px 40px;
+            margin: 25px;
+            // color: white;
+            // opacity: .8;
+            p {
+                line-height: 1.5;
+            }
+        }
+        .slick-slide {
+            height: 100vh;
+            div{
+                height: 100%;
+            }
+        }
         .bannerText{
             z-index: 2;
             position: absolute;
@@ -222,7 +238,7 @@ $text-lg : 18px;
                     background-color: red;
                     border-radius: 0;
                     width: 100%;
-                    padding: 20px 40px;
+                    padding: 10px 40px;
                     border: none;
                     display: flex;
                     align-items: center;

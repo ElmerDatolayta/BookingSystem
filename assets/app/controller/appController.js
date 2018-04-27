@@ -2,13 +2,14 @@ angular.module('BookingApplication')
 .controller('appController',['$scope','appService','$location','$filter','$state', '$localStorage', '$sessionStorage',
     function ($scope, appService, $location, $filter, $state, $localStorage, $sessionStorage){
     var vm = this;
-  
-    vm.destination = "1";
     vm.options = {
-        format: "MMMM DD, YYYY",
         minDate: new Date(),
         defaultDate: new Date()
     };
+    vm.format = 'MMMM dd, yyyy';
+    vm.oneWayDatePicker = new Date();
+    vm.originDatePicker = new Date();
+    vm.returnDatePicker = new Date();    
     vm.search = function() {
         $state.go('booking');
     };
@@ -22,6 +23,16 @@ angular.module('BookingApplication')
     function init() {
         getLocations();
     }
+
+    vm.checkLocations = (key) => {
+        if (vm.origin === vm.destination){
+            vm.errorLocations = "Origin and Destination cannot be the same.";
+            vm[key] = null;
+        }else{
+            vm.errorLocations = '';
+        }
+    };
+
 
     init();
 }]);

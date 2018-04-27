@@ -1,11 +1,48 @@
 <section class="banner">
-    <div class="banner-background banner-background-slick" style="background:url('assets/images/banner.jpg')center center; background-size: cover">
+    <div class="banner-background" >
+        <div id="bannerimage" style="height: 100vh;position: absolute;width: 100%">
+            <div class="bannercontent" style = "background:url('assets/images/chocolate_hills.jpg')center center; background-size: cover;height: 100%;"></div>
+            <div class="bannercontent" style = "background:url('assets/images/digyo_island.jpg')center center; background-size: cover;height: 100%;"></div>
+            <div class="bannercontent" style = "background:url('assets/images/canigao.jpg')center center; background-size: cover;height: 100%;"></div>
+            <div class="bannercontent" style = "background:url('assets/images/himokilan_island.jpg')center center; background-size: cover;height: 100%;"></div>
+        </div>
+        <script>
+            $("#bannerimage").slick({
+                arrows: false,
+                dots: true,
+                autoplay:true,
+                fade: true,
+                cssEase: 'linear',
+                autoplaySpeed: 5000
+            });
+            $(".navbar .container .navbar-header button").click(function(){
+                $(".navbar .container .navbar-header button").addClass("click");
+                $("#mobileview #navmenu").addClass("showmobile");
+            
+            });
+            $("#mobileview #navmenu button").click(function(){
+                $("#mobileview #navmenu").removeClass("showmobile");
+            });
+            
+            function collapsenav(){
+                if ($(".navbar").offset().top > 80){
+                    $('.navbar').addClass("scroll-change");
+                }else{
+                    $('.navbar').removeClass("scroll-change");
+                }
+            };
+            $(window).scroll(collapsenav);
+            $(document).ready(collapsenav);
+        </script>
         <!-- <div class="banner-background-overlay" style="background-image:url('assets/images/banner.jpg')"></div> -->
 
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-sm-6 hidden-xs flex flex-center">
-                    <h1 class="text-center color-white">Sample</h1>
+                    <div class="bg-desc">
+                            <h1 class="">To-od</h1>
+                            <p class="">To-od directly translates to sandbar in English. This sandbar only appears during low tide and is not visible during high tide. Local fisher folks go to this place to rest during low tide and also use it as landmark when they go fishing.</p>
+                    </div>
                 </div>
                 <div class="col-md-5 col-sm-6 flex flex-end">
                     <div class="bannerText">
@@ -15,30 +52,65 @@
                         <div class="booking-content">
                             <select class="custom-dropdown custom-select margin-bottom-10"
                                     data-ng-model="vm.origin"
-                                    data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
+                                    data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList"
+                                    data-ng-change="vm.checkLocations('origin')">
                                     <option value="" disabled selected>Select Origin</option>
                             </select>
                             <select class="custom-dropdown custom-select margin-bottom-10"
-                                    data-ng-model="vm.origin"
-                                    data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
+                                    data-ng-model="vm.destination"
+                                    data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList"
+                                    data-ng-change="vm.checkLocations('destination')">
                                     <option value="" disabled selected>Select Destination</option>
                             </select>
-                            <div class="tabs btn-group">
-                                <!-- <button type="button" class="btn text-uppercase btn-default active"><a href="#oneWay">One Way</a></button>
-                                <button type="button" class="btn text-uppercase btn-default"><a href="#roundTrip">Round Trip</a></button> -->
-                                <!-- <label class="btn btn-primary ng-untouched ng-valid ng-not-empty ng-dirty" ng-model="radioModel" uib-btn-radio="'Middle'" style="">Middle</label> -->
+                            <pre data-ng-if="vm.errorLocations" class="bg-danger text-danger">{{vm.errorLocations}}</pre>
+                            <div class="tabs btn-group" style="margin-top: 0;">
                                 <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'OneWay'">One Way</label>
                                 <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'RoundTrip'">Round Trip</label>
                             </div>
-                            <div data-ng-if="radioModel === 'OneWay'">
+                            <div data-ng-show="radioModel === 'OneWay'">
                                 <div class="date">
-                                    <div class="flex-1"> <input type="date" class="date-box"></div>
+                                    <div class="flex-1"> 
+                                        <div class="col-md-12">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" 
+                                                       ng-model="vm.oneWayDatePicker" is-open="oneWayDatePicker" datepicker-options="vm.options" 
+                                                       ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="oneWayDatePicker=!oneWayDatePicker"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>   
-                            <div data-ng-if="radioModel === 'RoundTrip'">
+                            <div data-ng-show="radioModel === 'RoundTrip'">
                                 <div class="date">
-                                    <div class="flex-1"> <input type="date" class="date-box"></div>
-                                    <div class="flex-1"> <input type="date" class="date-box"></div>
+                                    <div class="flex-1"> 
+                                        <div class="col-md-12">
+                                            <label class="color-white">Depart:</label>
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" 
+                                                        ng-model="vm.originDatePicker" is-open="originDatePicker" datepicker-options="vm.options" 
+                                                        ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="originDatePicker=!originDatePicker"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1"> 
+                                        <div class="col-md-12">
+                                            <label class="color-white">Return:</label>
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{vm.format}}" 
+                                                        ng-model="vm.returnDatePicker" is-open="returnDatePicker" datepicker-options="vm.options" 
+                                                        ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="returnDatePicker=!returnDatePicker"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
