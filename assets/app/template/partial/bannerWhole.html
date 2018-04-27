@@ -18,7 +18,7 @@
                                     data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
                                     <option value="" disabled selected>Select Origin</option>
                             </select>
-                            <select class="custom-dropdown margin-bottom-10"
+                            <select class="custom-dropdown custom-select margin-bottom-10"
                                     data-ng-model="vm.origin"
                                     data-ng-options="loc.locationId as loc.locationName for loc in vm.locationList">
                                     <option value="" disabled selected>Select Destination</option>
@@ -30,10 +30,12 @@
                                 <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'OneWay'">One Way</label>
                                 <label class="btn btn-danger" ng-model="radioModel" uib-btn-radio="'RoundTrip'">Round Trip</label>
                             </div>
-                            <div id="oneWay">
-                                
+                            <div data-ng-if="radioModel === 'OneWay'">
+                                <div class="date">
+                                    <div class="flex-1"> <input type="date" class="date-box"></div>
+                                </div>
                             </div>   
-                            <div id="roundTrip">
+                            <div data-ng-if="radioModel === 'RoundTrip'">
                                 <div class="date">
                                     <div class="flex-1"> <input type="date" class="date-box"></div>
                                     <div class="flex-1"> <input type="date" class="date-box"></div>
